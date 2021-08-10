@@ -37,7 +37,7 @@ const NavBar = () => {
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h6" className={classes.title}>
-            Placeholder
+            Josiah DuBose
           </Typography>
           <IconButton
             edge="start"

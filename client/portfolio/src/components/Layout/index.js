@@ -6,6 +6,8 @@ import routes from '../../routes';
 const useStyles = makeStyles(() => ({
   root: {
     flexGrow: 1,
+    marginTop: '2%',
+    display: 'flex'
   }
 }));
 
@@ -13,11 +15,11 @@ const Layout = () => {
   const classes = useStyles();
  
   return (
-    <Container>
-      <div className={classes.root}>
-          {routes}
-      </div>
-    </Container>
+    <div className={classes.root}>
+      <Container maxWidth="lg">
+        {routes}
+      </Container>
+    </div>
   );
 };
 
