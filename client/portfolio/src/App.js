@@ -1,8 +1,19 @@
 import React from 'react';
 import NavBar from './components/NavBar';
 import Layout from './components/Layout';
-import { createTheme } from '@material-ui/core/styles';
-import { ThemeProvider } from '@material-ui/core/styles';
+import { makeStyles, createTheme, ThemeProvider } from '@material-ui/core/styles';
+import background from './static/images/main.jpg';
+
+const useStyles = makeStyles((theme) => ({
+  siteContainer: {
+    backgroundImage: `url(${background})`,
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover',
+    width: '100vw',
+    height: '100vh',
+    filter: 'opacity(0.75)',
+  }
+}));
 
 const theme = createTheme({
   palette: {
@@ -13,11 +24,15 @@ const theme = createTheme({
 });
 
 const App = () => {
+  const classes = useStyles();
   return (
-    <ThemeProvider theme={theme}>
-        <NavBar />
-        <Layout />
-    </ThemeProvider>
+    <div className={classes.siteContainer}>
+      <ThemeProvider theme={theme}>
+          <NavBar />
+          <Layout />
+      </ThemeProvider>
+    </div>
+   
   );
 }
 
